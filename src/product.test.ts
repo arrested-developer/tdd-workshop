@@ -1,14 +1,4 @@
-class Product {
-  id: number;
-  stock: number;
-  hold: number;
-
-  constructor(id: number, stock: number) {
-    this.id = id;
-    this.stock = stock;
-    this.hold = 0;
-  }
-}
+import { Product } from "./product";
 
 describe("add item to order", () => {
   describe("sufficient product stock", () => {
