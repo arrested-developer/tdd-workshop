@@ -1,10 +1,5 @@
 import { Product } from "./product";
-
-class Order {
-  add(product: Product) {
-    product.hold = 1;
-  }
-}
+import { Order } from "./order";
 
 describe("add item to order", () => {
   describe("sufficient product stock", () => {
