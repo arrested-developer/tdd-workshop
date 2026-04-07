@@ -43,7 +43,11 @@ describe("add item to order", () => {
     it("errors when quantity added is greater than stock", () => {
       const order = new Order();
       const tubeScreamer = new Product(327, 1);
-      expect(() => order.add(tubeScreamer, 5)).toThrow();
+      expect(() => order.add(tubeScreamer, 5)).toThrow(
+        new Error(
+          "Insufficient stock of Ibanez Tube Screqamer. Only 1 currently available",
+        ),
+      );
     });
   });
 });
