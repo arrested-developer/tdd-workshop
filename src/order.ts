@@ -5,10 +5,13 @@ export class Order {
   list: OrderItem[] = [];
 
   add(product: Product, quantity: number) {
+    if (quantity > product.stock) {
+      throw new Error();
+    }
     product.hold = quantity;
-    this.list.push({ 
+    this.list.push({
       product,
-      quantity
+      quantity,
     });
   }
 }

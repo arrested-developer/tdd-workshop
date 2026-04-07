@@ -38,4 +38,12 @@ describe("add item to order", () => {
       expect(product.hold).toBe(2);
     });
   });
+
+  describe("scenario: insufficient product stock", () => {
+    it("errors when quantity added is greater than stock", () => {
+      const order = new Order();
+      const tubeScreamer = new Product(327, 1);
+      expect(() => order.add(tubeScreamer, 5)).toThrow();
+    });
+  });
 });
