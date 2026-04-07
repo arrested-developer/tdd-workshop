@@ -5,7 +5,7 @@ export class Order {
   list: OrderItem[] = [];
 
   add(product: Product, quantity: number) {
-    product.hold = 1;
+    product.hold = quantity;
     this.list.push({ 
       product,
       quantity
